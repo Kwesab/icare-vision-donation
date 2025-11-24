@@ -12,17 +12,16 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "npm run build:client && npm run build:server",
+    "build": "pnpm run build:client && pnpm run build:server",
     "build:client": "vite build",
     "build:server": "vite build --config vite.config.server.ts",
-    "start": "node dist/server/node-build.mjs",
+    "start": "node dist/server/production.mjs",
     "test": "vitest --run",
     "format.fix": "prettier --write .",
     "typecheck": "tsc",
     "setup-db": "tsx server/scripts/setup-database.ts",
     "init-admin": "tsx server/scripts/init-admin.ts",
-    "reset-admin": "tsx server/scripts/reset-admin-password.ts",
-    "postinstall": "pnpm rebuild bcrypt || true"
+    "reset-admin": "tsx server/scripts/reset-admin-password.ts"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
