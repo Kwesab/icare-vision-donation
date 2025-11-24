@@ -4,16 +4,11 @@ import path from "path";
 // Server build configuration
 export default defineConfig({
   build: {
-    lib: {
-      entry: path.resolve(__dirname, "server/node-build.ts"),
-      name: "server",
-      fileName: "production",
-      formats: ["es"],
-    },
+    ssr: true,
     outDir: "dist/server",
     target: "node22",
-    ssr: true,
     rollupOptions: {
+      input: path.resolve(__dirname, "server/node-build.ts"),
       external: [
         // Node.js built-ins
         "fs",
@@ -39,7 +34,7 @@ export default defineConfig({
       ],
       output: {
         format: "es",
-        entryFileNames: "[name].mjs",
+        entryFileNames: "index.mjs",
       },
     },
     minify: false, // Keep readable for debugging
