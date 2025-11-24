@@ -15,6 +15,16 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     outDir: "dist/spa",
+    rollupOptions: {
+      external: [
+        // Exclude server-only dependencies from client bundle
+        'bcrypt',
+        'jsonwebtoken',
+        'postgres',
+        'express',
+        'crypto',
+      ],
+    },
   },
   plugins: [react(), expressPlugin()],
   resolve: {
