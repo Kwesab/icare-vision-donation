@@ -22,7 +22,7 @@
     "setup-db": "tsx server/scripts/setup-database.ts",
     "init-admin": "tsx server/scripts/init-admin.ts",
     "reset-admin": "tsx server/scripts/reset-admin-password.ts",
-    "postinstall": "pnpm rebuild bcrypt --build-from-source || true"
+    "postinstall": "pnpm rebuild bcrypt || true"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
