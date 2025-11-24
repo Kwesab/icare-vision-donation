@@ -32,7 +32,7 @@ export default defineConfig({
         // External dependencies that should not be bundled
         "express",
         "cors",
-        "bcrypt",
+        "bcryptjs",
         "jsonwebtoken",
         "postgres",
         "dotenv",

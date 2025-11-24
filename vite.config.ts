@@ -17,7 +17,7 @@ export default defineConfig(({ mode }) => ({
     rollupOptions: {
       external: [
         // Exclude server-only dependencies from client bundle
-        'bcrypt',
+        'bcryptjs',
         'jsonwebtoken',
         'postgres',
         'express',
